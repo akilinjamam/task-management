@@ -6,7 +6,7 @@ const CompletedTask = () => {
     const [showDone, setShowDone] = useState([])
 
     useEffect(() => {
-        fetch('https://radiant-plains-45803.herokuapp.com/done', {
+        fetch('https://fierce-plains-73609.herokuapp.com/done', {
             method: 'GET',
             headers: {
                 'content-type': 'application/json'

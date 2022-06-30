@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import './Todo.css'
 import { Link } from "react-router-dom";
+import { useQuery } from 'react-query';
+import Loading from './Loading';
 
 const Todo = () => {
 
 
     const [allow, setAllow] = useState('false')
-    const [showTask, setShowTask] = useState([]);
 
-    console.log(showTask)
+
 
     const handleComplete = (id) => {
 
@@ -27,7 +28,7 @@ const Todo = () => {
                     done: match.task
                 }
 
-                fetch('https://radiant-plains-45803.herokuapp.com/done', {
+                fetch('https://fierce-plains-73609.herokuapp.com/done', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json',
@@ -48,17 +49,19 @@ const Todo = () => {
 
     }
 
-    useEffect(() => {
-        fetch('https://radiant-plains-45803.herokuapp.com/complete', {
-            method: 'GET',
-            headers: {
-                'content-type': 'application/json'
-            }
-        })
+    const { data: showTask, isLoading, refetch } = useQuery('complete', () => fetch('https://fierce-plains-73609.herokuapp.com/complete', {
+        method: 'GET',
+        headers: {
+            'content-type': 'application/json',
+        }
+    }).then(res => res.json()))
 
-            .then(res => res.json())
-            .then(data => setShowTask(data))
-    }, [])
+    if (isLoading) {
+        return <Loading></Loading>
+
+    }
+
+
     return (
         <div>
 

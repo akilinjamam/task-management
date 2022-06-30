@@ -7,14 +7,14 @@ const UpdateList = () => {
 
     const handleUpdate = (event) => {
 
-        const updateTask = event.target.update.value
+        const updateTask = event.target.updated.value
 
         const updateTaskData = {
 
             task: updateTask
         }
 
-        fetch(`https://radiant-plains-45803.herokuapp.com/complete/${id}`, {
+        fetch(`https://fierce-plains-73609.herokuapp.com/complete/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -43,7 +43,7 @@ const UpdateList = () => {
 
 
             <form onSubmit={handleUpdate}>
-                <input style={{ border: '1px solid black', width: '100%', textAlign: 'center', padding: '5px' }} placeholder='update your task' type="text" name="update" id="" required />
+                <input style={{ border: '1px solid black', width: '100%', textAlign: 'center', padding: '5px' }} placeholder='update your task' type="text" name="updated" id="" required />
                 <br /><br />
                 <input style={{ width: '100%' }} className='btn btn-primary' type="submit" value="Update" />
             </form>
@@ -51,4 +51,4 @@ const UpdateList = () => {
     );
 };
 
-export default UpdateList; <p>this is update list</p>
+export default UpdateList; 

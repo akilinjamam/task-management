@@ -7,14 +7,14 @@ const Home = () => {
 
     const handlePress = event => {
 
-
+        event.preventDefault()
         const task = event.target.task.value
 
         const theTask = {
             task: task
         }
 
-        fetch('https://radiant-plains-45803.herokuapp.com/complete', {
+        fetch('https://fierce-plains-73609.herokuapp.com/complete', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -38,7 +38,7 @@ const Home = () => {
             <div className='main'>
                 <div>
                     <form onSubmit={handlePress}>
-                        <input placeholder='type your daily task...' className='styles' type="text" name="task" />
+                        <input placeholder='type your daily task...' className='styles' type="text" name="task" required />
                     </form>
                 </div>
 
