@@ -1,0 +1,13 @@
+.done {
+    width: 50%;
+    margin: auto;
+    display: flex;
+    background-color: lightblue;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.done p {
+    text-align: center;
+}

@@ -1,0 +1,74 @@
+.main {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap-reverse;
+}
+
+.todo {
+
+    width: 600px;
+    height: 400px;
+    border: 1px solid gray;
+    padding: 10px;
+    margin: auto;
+    overflow: scroll;
+
+
+
+}
+
+.todo input {
+    margin-right: 10px;
+
+}
+
+.todo p {
+    color: gray;
+    margin-bottom: 10px;
+}
+
+.todo .info {
+
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.todo .info .index {
+    margin-right: 10px;
+}
+
+.todo .info .theBtn {
+    margin-right: 10px;
+}
+
+.todo .info .color {
+    text-decoration: line-through;
+}
+
+.todo .info .noColor {
+    color: black;
+}
+
+.style {
+
+    border: 1px solid gray;
+    width: 500px;
+    padding: 10px;
+
+}
+
+
+/* responsivness */
+
+@media only screen and (max-width: 600px) {
+    .todo {
+        width: 350px;
+    }
+
+    .style {
+        width: 350px
+    }
+}

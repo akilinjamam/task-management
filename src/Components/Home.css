@@ -1,0 +1,38 @@
+.todos {
+
+    width: 600px;
+    height: 400px;
+    border: 1px solid gray;
+    padding: 10px;
+
+
+}
+
+.todos input {
+    margin-right: 10px;
+
+}
+
+.todos p {
+    color: gray;
+    margin-bottom: 10px;
+}
+
+
+.todos .infos {
+
+    margin-top: 10px;
+
+}
+
+.todos .infos .indexs {
+    margin-right: 10px;
+}
+
+.styles {
+
+    border: 1px solid gray;
+    width: 500px;
+    padding: 10px;
+
+}
