@@ -7,6 +7,7 @@ import Todo from './Components/Todo';
 import Calender from './Components/Calender';
 import Home from './Components/Home';
 import UpdateList from './Components/UpdateList';
+import Footer from './Footer';
 
 function App() {
   return (
@@ -21,6 +22,8 @@ function App() {
         <Route path='/completed' element={<CompletedTask></CompletedTask>}></Route>
         <Route path='/calender' element={<Calender></Calender>}></Route>
       </Routes>
+
+      <Footer></Footer>
     </div>
   );
 }

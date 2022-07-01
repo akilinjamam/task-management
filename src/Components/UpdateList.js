@@ -6,7 +6,7 @@ const UpdateList = () => {
     const { id } = useParams()
 
     const handleUpdate = (event) => {
-
+        event.preventDefault()
         const updateTask = event.target.updated.value
 
         const updateTaskData = {

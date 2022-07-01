@@ -8,7 +8,7 @@ const Calender = () => {
 
     const [selected, setSelected] = useState(new Date())
     return (
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap-reverse' }}>
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap-reverse', marginTop: '20px' }}>
 
             <div className='date'>
                 {

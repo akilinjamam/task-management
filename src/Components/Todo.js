@@ -3,13 +3,14 @@ import './Todo.css'
 import { Link } from "react-router-dom";
 import { useQuery } from 'react-query';
 import Loading from './Loading';
+import Footer from '../Footer';
 
 const Todo = () => {
 
 
     const [allow, setAllow] = useState('false')
 
-
+    const [task, setTask] = useState([])
 
     const handleComplete = (id) => {
 
@@ -49,7 +50,7 @@ const Todo = () => {
 
     }
 
-    const { data: showTask, isLoading, refetch } = useQuery('complete', () => fetch('https://fierce-plains-73609.herokuapp.com/complete', {
+    const { data: showTask, isLoading } = useQuery('complete', () => fetch('https://fierce-plains-73609.herokuapp.com/complete', {
         method: 'GET',
         headers: {
             'content-type': 'application/json',
@@ -58,14 +59,27 @@ const Todo = () => {
 
     if (isLoading) {
         return <Loading></Loading>
-
     }
 
+
+    const handleDelete = id => {
+        const proceed = window.confirm('are you sure you want to delete?')
+        if (proceed) {
+            console.log('yes data is deleted', id)
+
+            // delete data
+            const url = `https://fierce-plains-73609.herokuapp.com/complete/${id}`
+            fetch(url, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+        }
+    }
 
     return (
         <div>
 
-
+            <br />
             <div className='todo'>
                 <p>Your To-do list: </p>
                 <hr />
@@ -80,15 +94,15 @@ const Todo = () => {
                                 </div>
 
                                 <div>
-                                    <Link to={`/updateList/${t._id}`}> <button className='btn btn-primary theBtn'>edit</button></Link>
-
+                                    <Link to={`/updateList/${t._id}`}> <button className='btn btn-xs theBtn'>edit</button></Link>
+                                    <button onClick={() => handleDelete(t._id)} className='btn btn-xs'>delete</button>
                                 </div>
                             </div>)
                     }
                 </div>
-
-
             </div>
+
+
 
         </div>
     );

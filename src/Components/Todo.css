@@ -1,9 +1,18 @@
+body {
+    background-image: url('../background1.jpg');
+    background-repeat: repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
 .main {
 
     display: flex;
     align-items: center;
     justify-content: space-around;
     flex-wrap: wrap-reverse;
+    position: static;
 }
 
 .todo {
@@ -34,6 +43,7 @@
     margin-top: 10px;
     display: flex;
     justify-content: space-between;
+
 }
 
 .todo .info .index {
@@ -44,9 +54,6 @@
     margin-right: 10px;
 }
 
-.todo .info .color {
-    text-decoration: line-through;
-}
 
 .todo .info .noColor {
     color: black;
@@ -64,11 +71,29 @@
 /* responsivness */
 
 @media only screen and (max-width: 600px) {
+
     .todo {
-        width: 350px;
+        width: 360px;
     }
 
-    .style {
-        width: 350px
+    .todo .info {
+
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-between;
+
+    }
+
+    span {
+        font-size: 11px;
+    }
+
+
+    .todo .info .index {
+        margin-right: 5px;
+    }
+
+    .todo .info .theBtn {
+        margin-right: 5px;
     }
 }

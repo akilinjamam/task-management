@@ -17,7 +17,8 @@ const CompletedTask = () => {
             .then(data => setShowDone(data))
     }, [])
     return (
-        <div>
+        <div className='todo' style={{ marginBottom: '40px', marginTop: '20px' }}>
+            <br />
             {
                 showDone.map((s, index) =>
                     <div className='done'>
