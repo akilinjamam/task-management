@@ -6,7 +6,9 @@ import calender from '../calender.jpg'
 
 const Calender = () => {
 
-    const [selected, setSelected] = useState(new Date())
+    const [selected, setSelected] = useState(new Date());
+
+    console.log(selected)
     return (
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap-reverse', marginTop: '20px' }}>
 
