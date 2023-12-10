@@ -6,7 +6,7 @@
 .parent {
     width: 1200px;
     overflow-y: hidden;
-    overflow-x: hidden;
+    overflow-x: scroll;
     border: 1px solid gray;
     margin: auto;
   }
@@ -24,9 +24,9 @@
     width: 100px;
     height: 100px;
     margin: 10px;
-    background-color: red;
-    display: flex;
+    background-color: orangered;
+    /* display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center; */
 }
 
