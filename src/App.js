@@ -12,6 +12,7 @@ import TestToolTwo from './Components/TestToolTwo';
 import TestToolThree from './Components/TestToolThree';
 import TestToolThreeV2 from './Components/TestToolThreeV2';
 import Nav from './Nav';
+import TestToolTwoV2 from './Components/TestToolTwoV2';
 
 
 
@@ -30,6 +31,7 @@ function App() {
         <Route path='/calender' element={<Calender></Calender>}></Route>
         <Route path='/testTool' element={<TestTool></TestTool>}></Route>
         <Route path='/testToolTwo' element={<TestToolTwo></TestToolTwo>}></Route>
+        <Route path='/testToolTwoV2' element={<TestToolTwoV2></TestToolTwoV2>}></Route>
         <Route path='/testToolThree' element={<TestToolThree></TestToolThree>}></Route>
         <Route path='/testToolThreeV2' element={<TestToolThreeV2></TestToolThreeV2>}></Route>
 

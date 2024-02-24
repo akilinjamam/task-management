@@ -1,0 +1,34 @@
+.testToolTwo{
+    position: relative;
+}
+
+.testToolTwoMain{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+}
+
+.slide-controller{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 70px;
+    color: white;
+    position: absolute;
+    top: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slide-controller-main{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.slide-controller-main span{
+    cursor: pointer;
+}

@@ -26,7 +26,8 @@ const Nav = () => {
                         <li><Link to='completed'>Completed Task</Link></li>
                         <li><Link to='calender'>Calender</Link></li>
                         <li><Link to='testTool'>auto slider</Link></li>
-                        <li><Link to='testToolTwo'>auto carousal</Link></li>
+                        {/* <li><Link to='testToolTwo'>auto carousal</Link></li> */}
+                        <li><Link to='testToolTwoV2'>auto carousal</Link></li>
                         {/* <li><Link to='testToolThree'>pagination</Link></li> */}
                         <li><Link to='testToolThreeV2'>pagination</Link></li>
                     </ul>
