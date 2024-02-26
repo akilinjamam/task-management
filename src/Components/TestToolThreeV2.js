@@ -15,7 +15,7 @@ const TestToolThreeV2 = () => {
 
 
     return (
-        <div style={{ width: '100%', height: '100vh' }}>
+        <div style={{ width: '100%' }}>
             <div style={{ margin: 'auto', width: '700px', border: '1px solid gray', padding: '5px', marginTop: '50px' }}>
                 <p>page no: {pageNumber}</p>
                 <br />

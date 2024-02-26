@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import './Slider.css'
+import tt4 from './Slider.module.css'
 
-const Slider = ({ data, width_value = '100%' }) => {
+const Slider = ({ data, width_value = '100%', auto_slide = true }) => {
 
-    // console.log(data)
     const [copiedData, setCopiedData] = useState([]);
     const [count, setCount] = useState(0);
     const [pause, setPause] = useState(false);
 
+    // console.log(copiedData)
 
 
     const findImageIdMapped = data?.map(m => {
@@ -22,16 +22,18 @@ const Slider = ({ data, width_value = '100%' }) => {
 
     useEffect(() => {
         const handleTransition = () => {
-            if (pause) {
-                const increase = count + 0;
-                setCount(increase)
-            } else {
-                const increase = count + 1;
-                setCount(increase)
-            }
+            if (auto_slide) {
+                if (pause) {
+                    const increase = count + 0;
+                    setCount(increase)
+                } else {
+                    const increase = count + 1;
+                    setCount(increase)
+                }
 
-            if ((data?.length) <= (count)) {
-                setCount(0)
+                if ((data?.length) <= (count)) {
+                    setCount(0)
+                }
             }
             if (copiedData) {
                 setCopiedData([...data, findFirstImage])
@@ -41,36 +43,41 @@ const Slider = ({ data, width_value = '100%' }) => {
         return () => {
             clearInterval(interval);
         };
-    }, [count, data, copiedData, findFirstImage, pause]);
+    }, [count, data, copiedData, findFirstImage, pause, auto_slide]);
     return (
-        <div className='testToolTwo'>
-
-            <div className='testToolTwoMain'>
-                {
-                    copiedData?.map(d =>
-                        <div key={d.id}
-                            style={{
-                                transition: `transform ${count > 0 ? 1 : 0}s`,
-                                transform: `translateX(${count * -100}%)`,
-                            }}
-
-                        >
-                            <div
-                                style={{ width: '100vw', animationDuration: '16s', }}
-                                onMouseEnter={() => setPause(true)}
-                                onMouseLeave={() => setPause(false)}
-                            >
-                                <img style={{ height: '70vh', width: width_value }} src={d?.bannerImg} alt="" />
-
-                            </div>
-                        </div>
-                    )
-                }
+        <div
+            className={tt4.main}
+        >
+            <div className={tt4.container}>
+                <div
+                    onMouseEnter={() => setPause(true)}
+                    onMouseLeave={() => setPause(false)}
+                    style={{ width: `${copiedData.length * 100}%`, height: '100%', display: 'flex' }}>
+                    {
+                        copiedData.map(d => {
+                            return (
+                                <div style={{
+                                    width: '100%',
+                                    height: '100%',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    transition: `transform ${count > 0 ? 1 : 0}s`,
+                                    transform: `translateX(${count * -100}%)`
+                                }}>
+                                    <img style={{ width: '100%', height: '100%', display: 'block' }} src={d?.bannerImg} alt="" />
+                                </div>
+                            )
+                        })
+                    }
+                </div>
             </div>
-            <div className="slide-controller">
-                <div className='slide-controller-main'>
-                    <span onClick={() => setCount(count === 1 ? () => setCount(data?.result?.length) : count - 1)}>&lt;</span>
-                    <span onClick={() => setCount(count === data?.result?.length ? () => setCount(0) : count + 1)}>&gt;</span>
+            <div className={tt4.slide_controller}>
+                <div className={tt4.slide_controller_main}>
+                    <span onClick={() => setCount(count > 1 ? count - 1 : () => setCount(data?.length))}>&lt;</span>
+                    <span onClick={() => setCount(count === data?.length ? () => setCount(1) : count + 1)}>&gt;</span>
+                    {/* <span onClick={() => setCount(count === 1 ? () => setCount(data?.length) : count - 1)}>&lt;</span>
+                <span onClick={() => setCount(count === data?.length ? () => setCount(0) : count + 1)}>&gt;</span> */}
                 </div>
             </div>
         </div>

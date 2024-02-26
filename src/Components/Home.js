@@ -1,67 +1,29 @@
 
 import './Home.css'
-import Todo from './Todo';
 import Typewriter from 'typewriter-effect';
 
 const Home = () => {
 
 
-    const handlePress = event => {
 
-        event.preventDefault()
-        const task = event.target.task.value
-
-        const theTask = {
-            task: task
-        }
-
-        fetch('https://fierce-plains-73609.herokuapp.com/complete', {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json',
-            },
-            body: JSON.stringify(theTask)
-        })
-
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                alert('added to To-Do List')
-            })
-
-
-
-
-    }
     return (
         <div>
-            <br /><br />
-            <div className='main'>
-                <div>
-                    <div>
-                        <p className='typeWritter'>
-                            <span > <Typewriter
+            <div style={{ width: '100%', height: '90vh', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'crimson', fontSize: '40px', fontWeight: 'bold' }}>
+                <p className='typeWritter'>
+                    <span > <Typewriter
 
-                                options={{
-                                    strings: ["Make Task", " Do Complete"],
-                                    autoStart: true,
-                                    delay: 75,
-                                    loop: true
-                                }}
+                        options={{
+                            strings: ["Impliment test", "Build something new"],
+                            autoStart: true,
+                            delay: 75,
+                            loop: true
+                        }}
 
-                            />  </span>
-                        </p>
-                        <br /><br />
-                    </div>
-                    <form onSubmit={handlePress}>
-                        <input placeholder='type your daily task...' className='styles' type="text" name="task" required />
-                    </form>
-                </div>
+                    />  </span>
+                </p>
 
-                <div>
-                    <Todo></Todo>
-                </div>
             </div>
+
         </div>
 
     );

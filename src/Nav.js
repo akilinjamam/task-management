@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Nav = () => {
     return (
-        <div>
+        <div style={{ width: '100vw', height: '10vh' }}>
             <div className="navbar bg-base-100">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -23,13 +23,14 @@ const Nav = () => {
                     <ul className="menu menu-horizontal p-0">
                         {/* <li><Link to='/home'>Home</Link></li>
                         <li><Link to='/todo'>To-Do</Link></li> */}
-                        <li><Link to='completed'>Completed Task</Link></li>
+
                         <li><Link to='calender'>Calender</Link></li>
                         <li><Link to='testTool'>auto slider</Link></li>
                         {/* <li><Link to='testToolTwo'>auto carousal</Link></li> */}
                         <li><Link to='testToolTwoV2'>auto carousal</Link></li>
                         {/* <li><Link to='testToolThree'>pagination</Link></li> */}
                         <li><Link to='testToolThreeV2'>pagination</Link></li>
+
                     </ul>
                 </div>
 

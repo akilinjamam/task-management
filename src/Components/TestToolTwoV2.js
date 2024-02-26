@@ -6,11 +6,11 @@ import { sliderData } from '../sliderImgData/data';
 const TestToolTwoV2 = () => {
     const data = sliderData
     return (
-        <div style={{ width: '70%', margin: 'auto' }}>
-            <br /><br />
+        <div style={{ width: '70%', margin: 'auto' }} >
+
             <Slider
                 data={data}
-                width_value='70%'
+                auto_slide={true}
             />
         </div>
     );
