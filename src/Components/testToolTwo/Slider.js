@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import tt4 from './Slider.module.css'
 
-const Slider = ({ data, width_value = '100%', auto_slide = true }) => {
+const Slider = ({ data, auto_slide = true }) => {
 
     const [copiedData, setCopiedData] = useState([]);
     const [count, setCount] = useState(0);
