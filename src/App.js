@@ -9,8 +9,12 @@ import TestTool from './Components/TestTool';
 import TestToolTwo from './Components/TestToolTwo';
 import TestToolThree from './Components/TestToolThree';
 import TestToolThreeV2 from './Components/TestToolThreeV2';
-import Nav from './Nav';
+
 import TestToolTwoV2 from './Components/TestToolTwoV2';
+import Todos from './Components/testRedux/component/Todos';
+import Nav from './Nav';
+import BarcodeGen from './Components/testRedux/component/Barcode/BarcodeGen';
+import CrudNesting from './Components/test_nested_mongoose_schema/CrudNesting';
 
 
 function App() {
@@ -27,6 +31,9 @@ function App() {
         <Route path='/testToolTwoV2' element={<TestToolTwoV2></TestToolTwoV2>}></Route>
         <Route path='/testToolThree' element={<TestToolThree></TestToolThree>}></Route>
         <Route path='/testToolThreeV2' element={<TestToolThreeV2></TestToolThreeV2>}></Route>
+        <Route path='/barcodeGen' element={<BarcodeGen></BarcodeGen>}></Route>
+        <Route path='/dynamicInput' element={<CrudNesting />}></Route>
+        {/* <Route path='/testRedux' element={<Todos></Todos>}></Route> */}
       </Routes>
 
       {/* <Footer></Footer> */}

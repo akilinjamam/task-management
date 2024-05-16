@@ -10,6 +10,8 @@ import {
   QueryClient,
   QueryClientProvider,
 } from 'react-query'
+import { Provider } from 'react-redux';
+import store from './store';
 
 
 const queryClient = new QueryClient()
@@ -18,11 +20,13 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 
   <QueryClientProvider client={queryClient}>
-    <React.StrictMode>
+    {/* <React.StrictMode> */}
+    <Provider store={store}>
       <BrowserRouter>
         <App />
       </BrowserRouter>
-    </React.StrictMode>
+    </Provider>
+    {/* </React.StrictMode> */}
   </QueryClientProvider>
 
 
